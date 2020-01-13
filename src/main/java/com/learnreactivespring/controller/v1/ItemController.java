@@ -17,9 +17,11 @@ import static com.learnreactivespring.constants.ItemsConstants.ITEMS_CONSTANTS_U
 public class ItemController {
     @Autowired
     private ItemReactiveRepository itemReactiveRepository;
+    private String message = "Vattam";
 
     @GetMapping(ITEMS_CONSTANTS_URL_V1)
     public Flux<Item> getAllItems() {
+        log.info(message);
         return itemReactiveRepository.findAll();
     }
 
